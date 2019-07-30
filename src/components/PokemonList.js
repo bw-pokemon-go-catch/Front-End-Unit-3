@@ -10,6 +10,13 @@ class Cities extends React.Component {
         this.props.getPokemon()
     };
 
+
+
+
+
+
+    
+
 render() {
     console.log('cityID', this.props.pokemon)
     return (

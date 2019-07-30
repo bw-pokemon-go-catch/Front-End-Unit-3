@@ -25,7 +25,7 @@ class Login extends React.Component {
     e.preventDefault();
     this.props
       .login(this.state.credentials)
-      .then(() => this.props.history.push("/cities"));
+      .then(() => this.props.history.push("/pokemon"));
   };
 
   render() {

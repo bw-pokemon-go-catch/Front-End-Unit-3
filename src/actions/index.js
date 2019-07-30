@@ -50,7 +50,7 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE'
 export const getPokemon= () => dispatch => {
     dispatch({ type: FETCH_DATA_START });
     axios()
-    .get('https://pokemon-go-bw-backend.herokuapp.com/pokemon')
+    .get('/pokemon')
     .then(res => {
         console.log('response', res);
         dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
@@ -65,21 +65,54 @@ export const getPokemon= () => dispatch => {
 
 
 
+
+
+
+
+
+export const POST_DATA_START = 'POST_DATA_START'
+export const POST_DATA_SUCCESS = 'POST_DATA_SUCCESS'
+export const POST_DATA_FAILURE = 'POST_DATA_FAILURE'
+
+export const POSTPokemon= (pokemon) => dispatch => {
+    dispatch({ type: POST_DATA_START });
+    axios()
+    .post(`pokemon/`,pokemon)
+    .then(res => {
+        console.log('response', res);
+        dispatch({ type: POST_DATA_SUCCESS, payload: pokemon })
+    })
+    .catch(err => {
+        console.log(err.response.data.message);
+        dispatch({ type: POST_DATA_FAILURE, 
+            payload: err.response.data.message })
+    })
+}
+
+
+
+
+
+
+
+
+
+
 export const DELETE_DATA_START = 'DELETE_DATA_START'
 export const DELETE_DATA_SUCCESS = 'DELETE_DATA_SUCCESS'
 export const DELETE_DATA_FAILURE = 'DELETE_DATA_FAILURE'
 
 export const DeletePokemon= (id) => dispatch => {
     dispatch({ type: DELETE_DATA_START });
-    axios()
-    .get(`https://pokemon-go-bw-backend.herokuapp.com/pokemon/${id}`)
+   return axios()
+    .delete(`/pokemon/${id}`)
     .then(res => {
         console.log('response', res);
-        dispatch({ type: DELETE_DATA_SUCCESS, payload: id })
+        dispatch({ type: DELETE_DATA_SUCCESS, payload: id });return true
     })
     .catch(err => {
         console.log(err.response);
         dispatch({ type: DELETE_DATA_FAILURE, 
-            payload: err.response })
+            payload: err.response.message })
     })
 }

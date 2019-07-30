@@ -5,7 +5,7 @@ import Login from "./components/Login";
 import Pokemons from "./components/PokemonList";
 
 import Register from "./components/Register";
-
+import AddFrom from './components/ADDpokemon/pokemonAddFrom'
 // import { getRestaurants } from './actions';
 import { Navbar, NavbarBrand } from "reactstrap";
 
@@ -27,29 +27,31 @@ function App() {
           </NavbarBrand>
           <div className="Links">
             {token ? (
-              <Link style={{ color: "black" }} to="/pokemon">
+             <div> <Link style={{ color: "black" }} to="/pokemon">
                 Pokemons
-              </Link>
+              </Link>  <Link style={{ color: "black" }} to="/addpokemon">
+               <span style={{background:'#ff0000',padding:'10px 5px',borderRadius:'10px',color:'white'}}>AddPokemons</span> 
+              </Link></div>
             ) : (
-              (
+              (<div>
                 <Link style={{ color: "black" }} to="/register">
                   Register
                 </Link>
-              ) && (
+              
                 <Link style={{ color: "black" }} to="/login">
                   Login
-                </Link>
+                </Link></div>
               )
             )}
           </div>
         </Navbar>
 
         {token ? (
-          <Route path="/pokemon" component={Pokemons} />
-        ) : (
-          <Route path="/login" component={Login} /> && (
+        <div>  <Route path="/pokemon" component={Pokemons} />      <Route path="/addpokemon" component={AddFrom} /></div>
+        ) : (<div>
+          <Route path="/login" component={Login} /> 
             <Route path="/register" component={Register} />
-          )
+          </div>
         )}
       </div>
     </Router>

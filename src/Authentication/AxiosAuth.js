@@ -5,8 +5,9 @@ export default function() {
 
   return axios.create({
     headers: {
-      'Content-Type': 'application/json',
-      Authorization: `${token}`
-    }
+      Authorization: token
+    },
+baseURL: 'https://pokemon-go-bw-backend.herokuapp.com/'
   });
-}
+};
+
