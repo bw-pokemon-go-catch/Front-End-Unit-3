@@ -31,11 +31,7 @@ const onChange =(e)=>{
    const fliterPokemon = this.props.pokemon.filter(poke => {return poke.Name.toLowerCase().includes(this.state.search.toLowerCase())})
     return (
         <div>
-        <ReactAudioPlayer
-  src="./utils/pokemonSong.ogg"
-  autoPlay
-  controls
-/>
+  
             <h1 style={{color:'white',fontFamily: 'Saira Stencil One, cursive'}}>Pokemons </h1>
             <SearchBox search={this.state.search}  onChange={onChange}/>
          <div style={{display:'flex' ,flexWrap:'wrap' ,width:"100%",justifyContent:'center',alignItems:'center',padding:'20px',margin:'auto'}}>
