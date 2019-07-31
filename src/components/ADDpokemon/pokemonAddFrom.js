@@ -28,7 +28,9 @@ this.props.history.push('/pokemon')
 }
 
   render() {
-    return<form  onSubmit={this.onHandleSubmit} style={{display:"flex",justifyContent:'center',flexDirection:'column',alignItems:'center'}} >
+    return<form  onSubmit={this.onHandleSubmit} style={{display:"flex",justifyContent:'center',flexDirection:'column',alignItems:'center',color:'white'}} >
+  
+<h1 style={{fontFamily:'Saira Stencil One, cursive' ,background:'#000000',color:'white',padding:'5px 10px'}}>Whos That Pokemon?</h1>
 
 Name:<input value={this.state.Name} name='Name'  onChange={this.onhandleChange}/>
 
@@ -44,7 +46,11 @@ Type1:<input value={this.state.Type1} name='Type1'  onChange={this.onhandleChang
 Type2:<input value={this.state.Type2} name='Type2'  onChange={this.onhandleChange}/>
 
 
-<button style={{margin:'10px' ,background:'#ff0000',color:'white',outline:'none',border:'none'}}>ADD</button>
+<button style={{margin:'10px' ,background:'#B95244',color:'white',outline:'none',border:'none'}}>ADD</button>  <div>
+<img src='https://www.stickpng.com/assets/thumbs/585965d64f6ae202fedf2871.png' alt='pokemon'/><img src='https://vignette.wikia.nocookie.net/pokemon/images/0/02/009Blastoise.png/revision/latest?cb=20140328191642' alt='pokemon'/>
+<img src='https://www.stickpng.com/assets/thumbs/5859662e4f6ae202fedf2878.png' alt='pokemon'/>
+
+</div>
     </form>;
   }
 }

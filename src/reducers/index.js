@@ -9,7 +9,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAILURE,
   DELETE_DATA_START,
-  DELETE_DATA_SUCCESS,DELETE_DATA_FAILURE,POST_DATA_START,POST_DATA_FAILURE,POST_DATA_SUCCESS
+  DELETE_DATA_SUCCESS,DELETE_DATA_FAILURE,POST_DATA_START,POST_DATA_FAILURE,POST_DATA_SUCCESS,EDIT_DATA_START,EDIT_DATA_SUCCESS,EDIT_DATA_FAILURE
 } from "../actions";
 
 const initialState = {
@@ -116,6 +116,24 @@ const reducer = (state = initialState, action) => {
 				pokemon : [ ...state.pokemon, action.payload ],	
 			};	
 		case POST_DATA_FAILURE:	
+			return {	
+				...state,	
+				postingData: false,	
+				error         : action.payload,	
+			};	
+      case EDIT_DATA_START:	
+			return {	
+				...state,	
+				postingData : true,	
+				error         : '',	
+			};	
+		case EDIT_DATA_SUCCESS:	
+			return {	
+				...state,	
+				postingData : false,	
+				pokemon : state.pokemon.filter(poke => poke.id !== action.payload),	
+			};	
+		case EDIT_DATA_FAILURE:	
 			return {	
 				...state,	
 				postingData: false,	

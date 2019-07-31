@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .App-logo {
@@ -64,3 +65,5 @@
 }
 
 .card_extra{display:flex ;justify-content:space-evenly ;font-size:.7rem;align-items:center}
+
+

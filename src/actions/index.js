@@ -116,3 +116,30 @@ export const DeletePokemon= (id) => dispatch => {
             payload: err.response.message })
     })
 }
+
+
+
+
+
+export const EDIT_DATA_START = 'EDIT_DATA_START'
+export const EDIT_DATA_SUCCESS = 'EDIT_DATA_SUCCESS'
+export const EDIT_DATA_FAILURE = 'EDIT_DATA_FAILURE'
+
+export const EDITPokemon= (pokemon) => dispatch => {
+    dispatch({ type: EDIT_DATA_START });
+   return axios()
+    .put(`/pokemon/${pokemon.id}`)
+    .then(res => {
+        console.log('response here', res);
+        dispatch({ type: EDIT_DATA_SUCCESS, payload: pokemon });return true
+    })
+    .catch(err => {
+        console.log(err.response);
+        dispatch({ type: EDIT_DATA_FAILURE, 
+            payload: err.response.message })
+    })
+}
+
+
+
+
