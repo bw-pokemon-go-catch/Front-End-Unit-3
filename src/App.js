@@ -59,12 +59,18 @@ function App() {
               </div>
             ) : (
               <div>
-                <Link style={{ color: "black" }} to="/register">
+                <Link style={{ color: "white" }} to="/register">
                   Register
                 </Link>
 
                 <Link style={{ color: "black" }} to="/login">
-                  Login
+                <span  style={{
+                      background: "#1A3F44",
+                      padding: "10px 5px",
+                      borderRadius: "10px",
+                      color: "white"
+                    }}>Login</span>
+                  
                 </Link>
               </div>
             )}
