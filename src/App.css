@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 .App-logo {
@@ -21,6 +24,7 @@
 
 .App-link {
   color: #61dafb;
+
 }
 
 @keyframes App-logo-spin {
@@ -31,3 +35,37 @@
     transform: rotate(360deg);
   }
 }
+
+.Outer_Card{
+  border-radius:10px;display:flex;background:white;margin:20px;justify-content:center;align-items:center;flex-direction:column;border-bottom:2px #ff0000 solid;border-left:1px #ff0000 solid;width: 50%;
+  height: auto
+
+}
+
+.Inner_Card{
+
+  border:black 5px solid;border-radius:10px;padding: 14px
+}
+
+.x_btn{
+  background:transparent  ;align-self:"end";padding:none; outline:none;border:none
+}
+
+.card_Name_div{
+  display:flex  ; justify-content:space-between
+}
+
+
+.card_Name_h1{
+  font-size:.8rem;text-align: start;font-weight:bold
+}
+.card_hp{
+  font-size:.8rem;font-weight:bold
+}
+
+.card_img{
+  border:groove 8px rgba(255, 41, 7, 0.15);width:76%;padding:10px 20px ;height:137px;background:#f3f1e1
+}
+
+.card_extra{display:flex ;justify-content:space-evenly ;font-size:.7rem;align-items:center}
+

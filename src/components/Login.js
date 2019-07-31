@@ -6,26 +6,25 @@ import { login } from "../actions";
 
 class Login extends React.Component {
   state = {
-    credentials: {
+    
       username: "",
       password: ""
-    }
+    
   };
 
   handleChange = e => {
     this.setState({
-      credentials: {
-        ...this.state.credentials,
+      
         [e.target.name]: e.target.value
-      }
+      
     });
   };
 
   login = e => {
     e.preventDefault();
     this.props
-      .login(this.state.credentials)
-      .then(() => this.props.history.push("/cities"));
+      .login(this.state)
+       this.props.history.push("/pokemon");
   };
 
   render() {
@@ -40,7 +39,7 @@ class Login extends React.Component {
                 type="text"
                 name="username"
                 placeholder="username"
-                value={this.state.credentials.username}
+                value={this.state.username}
                 onChange={this.handleChange}
               />
             </Col>
@@ -53,13 +52,13 @@ class Login extends React.Component {
                 type="text"
                 name="password"
                 placeholder="password"
-                value={this.state.credentials.password}
+                value={this.state.password}
                 onChange={this.handleChange}
               />
             </Col>
           </FormGroup>
 
-          <Button color="warning" onClick={this.login}>
+          <Button color="warning" >
             Login
           </Button>
         </Form>

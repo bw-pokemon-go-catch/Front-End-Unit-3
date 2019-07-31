@@ -50,7 +50,7 @@ export const FETCH_DATA_FAILURE = 'FETCH_DATA_FAILURE'
 export const getPokemon= () => dispatch => {
     dispatch({ type: FETCH_DATA_START });
     axios()
-    .get('https://pokemon-go-bw-backend.herokuapp.com/pokemon')
+    .get('/pokemon')
     .then(res => {
         console.log('response', res);
         dispatch({ type: FETCH_DATA_SUCCESS, payload: res.data })
@@ -64,22 +64,3 @@ export const getPokemon= () => dispatch => {
 
 
 
-
-export const DELETE_DATA_START = 'DELETE_DATA_START'
-export const DELETE_DATA_SUCCESS = 'DELETE_DATA_SUCCESS'
-export const DELETE_DATA_FAILURE = 'DELETE_DATA_FAILURE'
-
-export const DeletePokemon= (id) => dispatch => {
-    dispatch({ type: DELETE_DATA_START });
-    axios()
-    .get(`https://pokemon-go-bw-backend.herokuapp.com/pokemon/${id}`)
-    .then(res => {
-        console.log('response', res);
-        dispatch({ type: DELETE_DATA_SUCCESS, payload: id })
-    })
-    .catch(err => {
-        console.log(err.response);
-        dispatch({ type: DELETE_DATA_FAILURE, 
-            payload: err.response })
-    })
-}

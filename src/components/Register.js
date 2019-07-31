@@ -6,26 +6,26 @@ import { register } from '../actions';
 
 class Register extends React.Component {
     state = {
-        credentials: {
+        
             username: '',
             password: '',
             email: ''
-        }
+        
     }
 
     handleChange = e => {
         this.setState({
-            credentials: {
-                ...this.state.credentials,
+            
+                
                 [e.target.name]: e.target.value
-            }
+            
         })
     }
 
     register = e => {
         e.preventDefault();
-        this.props.register(this.state.credentials)
-        // .then(() => this.props.history.push("/login"));
+        this.props.register(this.state)
+         this.props.history.push("/login");
     }
     
     render() {
@@ -39,7 +39,7 @@ class Register extends React.Component {
                     type='text'
                     name='username'
                     placeholder='username'
-                    value={this.state.credentials.username}
+                    value={this.state.username}
                     onChange={this.handleChange}
                     />
                     </Col>
@@ -52,7 +52,7 @@ class Register extends React.Component {
                     type='text'
                     name='password'
                     placeholder='password'
-                    value={this.state.credentials.password}
+                    value={this.state.password}
                     onChange={this.handleChange}
                     />
                     </Col>
@@ -65,13 +65,13 @@ class Register extends React.Component {
                     type='text'
                     name='email'
                     placeholder='email'
-                    value={this.state.credentials.email}
+                    value={this.state.email}
                     onChange={this.handleChange}
                     />
                     </Col>
                     </FormGroup>
 
-                <Button color='warning' onClick={this.register}>Submit
+                <Button color='warning'>Submit
                     </Button>
                 </Form>
 
