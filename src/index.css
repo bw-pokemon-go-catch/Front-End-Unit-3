@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   background:rgb(0, 0, 0) !important;
+
 }
 
 code {
@@ -14,7 +16,9 @@ code {
 }
 
 .App {
+
   background-color:#1A3F44;
+
 }
 
 nav {

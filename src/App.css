@@ -1,6 +1,8 @@
 .App {
   text-align: center;
+
   font-family: 'Montserrat', sans-serif;
+
 }
 
 .App-logo {
@@ -22,7 +24,7 @@
 
 .App-link {
   color: #61dafb;
-  
+
 }
 
 @keyframes App-logo-spin {
@@ -33,6 +35,7 @@
     transform: rotate(360deg);
   }
 }
+
 .Outer_Card{
   border-radius:10px;display:flex;background:white;margin:20px;justify-content:center;align-items:center;flex-direction:column;border-bottom:2px #ff0000 solid;border-left:1px #ff0000 solid;width: 50%;
   height: auto
@@ -65,5 +68,4 @@
 }
 
 .card_extra{display:flex ;justify-content:space-evenly ;font-size:.7rem;align-items:center}
-
 
