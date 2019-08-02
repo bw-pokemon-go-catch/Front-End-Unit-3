@@ -125,7 +125,7 @@ export const EDIT_DATA_START = 'EDIT_DATA_START'
 export const EDIT_DATA_SUCCESS = 'EDIT_DATA_SUCCESS'
 export const EDIT_DATA_FAILURE = 'EDIT_DATA_FAILURE'
 
-export const EDITPokemon= (pokemon) => dispatch => {
+export const EDITPokemon= (pokemon) => dispatch => {console.log(pokemon)
     dispatch({ type: EDIT_DATA_START });
    return axios()
     .put(`/pokemon/${pokemon.id}`)

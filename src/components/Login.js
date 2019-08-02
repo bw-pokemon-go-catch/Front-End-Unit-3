@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Button, Col, Form, FormGroup, Label, Input } from "reactstrap";
-
+import { Loader } from 'semantic-ui-react'
 import { login } from "../actions";
-
+import ReactPlayer from 'react-player'
+import { SimpleImg } from 'react-simple-img';
 class Login extends React.Component {
   state = {
     
@@ -24,18 +25,31 @@ class Login extends React.Component {
     e.preventDefault();
     this.props
       .login(this.state)
-       this.props.history.push("/pokemon");
+   
+       
+      setTimeout(function(){ document.location.reload(); this.props.history.push("/pokemon")}, 400)
+
+
   };
 
+  
+   
+
   render() {
-    return (
+    console.log()
+    return this.props.loggingIn ?<SimpleImg  height={300} src="https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c31f.png" /> :(
       <div>
-        {this.props.error && <h3>{this.props.error}</h3>}
+        <ReactPlayer volume='.1' loop='false'  width="0" height='0'  style={{zIndex:"-1" ,display:'absulote'}} url='https://www.youtube.com/watch?v=gF1FJRM8Wck' playing />
         <Form onSubmit={this.login}>
-          <FormGroup>
+
+
+       
+        <h1 style={{fontFamily:'Saira Stencil One, cursive' ,color:'white',padding:'5px 10px'}}>Login</h1>
+
+          <FormGroup>   
             <Label for="username">Username: </Label>
             <Col sm="12" md={{ size: 6, offset: 3 }}>
-              <Input
+              <Input 
                 type="text"
                 name="username"
                 placeholder="username"
@@ -59,8 +73,21 @@ class Login extends React.Component {
           </FormGroup>
 
           <Button color="warning" >
-            Login
-          </Button>
+           { this.props.loggingIn ? <Loader active inline='centered'/> :'Login'}
+          </Button> <div>
+          <img style={{width:'30%'}}
+            src="https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c319.png"
+            alt="pokemon"
+          />
+          <img style={{width:'30%'}}
+            src="https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c32a.png"
+            alt="pokemon"
+          />
+          <img style={{width:'30%'}}
+            src="https://www.stickpng.com/assets/thumbs/585965284f6ae202fedf2862.png"
+            alt="pokemon"
+          />
+        </div>
         </Form>
       </div>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link ,Redirect} from "react-router-dom";
 import Login from "./components/Login";
 import Pokemons from "./components/PokemonList";
 import MainPage from "./components/MainPage";
@@ -11,7 +11,7 @@ import EditFrom from './components/EditPokemon/PokemonEditFROM'
 import { Navbar, NavbarBrand } from "reactstrap";
 
 // console.log('APP props', props)
-function App() {
+function App(props) {
   const token = localStorage.getItem("token");
 
   return (
@@ -27,7 +27,7 @@ function App() {
               alignItems: "center"
             }}
           >
-            {" "}
+           
             <img
               alt="pokemon"
               style={{ width: "15%" }}
@@ -40,7 +40,7 @@ function App() {
           <div className="Links">
             {token ? (
               <div>
-                {" "}
+               
                 <Link style={{ color: "white" }} to="/pokemon">
                   Pokemons
                 </Link>{" "}
@@ -54,6 +54,18 @@ function App() {
                     }}
                   >
                     AddPokemons
+                  </span>
+                </Link>
+                <Link onClick={()=>{localStorage.removeItem("token");setTimeout(function(){ document.location.reload();}, 200)}} style={{ color: "black" }} to="/">
+                  <span
+                    style={{
+                      background: "#1A3F44",
+                      padding: "10px 5px",
+                      borderRadius: "10px",
+                      color: "white"
+                    }}
+                  >
+                    LogOut
                   </span>
                 </Link>
               </div>
@@ -80,15 +92,17 @@ function App() {
         <Route exact path="/" component={MainPage} />
         {token ? (
           <div>
-            {" "}
-            <Route exact path="/pokemon" component={Pokemons} />{" "}
+           
+            <Route exact path="/pokemon" component={Pokemons} />
             <Route exact path="/addpokemon" component={AddFrom} />
             <Route path='/pokemon/:id' component={EditFrom}/>
+            <Redirect to='/pokemon' />
           </div>
         ) : (
           <div>
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Redirect to='/' />
           </div>
         )}
       </div>
