@@ -142,4 +142,3 @@ export const EDITPokemon= (pokemon) => dispatch => {console.log(pokemon)
 
 
 
-
