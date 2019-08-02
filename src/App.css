@@ -69,3 +69,17 @@
 
 .card_extra{display:flex ;justify-content:space-evenly ;font-size:.7rem;align-items:center}
 
+
+
+
+
+.input input:focus {
+  color: red;
+  outline: 2px solid orange;  
+ }
+ .input .input.visited {
+   color: red;
+  outline: 2px solid orange;  
+ }
+
+

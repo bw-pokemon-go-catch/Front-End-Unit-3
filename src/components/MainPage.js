@@ -1,9 +1,11 @@
 import React from "react";
 import {Link} from 'react-router-dom'
+import ReactPlayer from 'react-player'
 const MainPage = () => {
 
   return (
     <div>
+    <ReactPlayer volume='.4' loop='false' width="0" height='0' style={{zIndex:"-1",display:'absulote'}} url='https://www.youtube.com/watch?v=JuYeHPFR3f0' playing />
       <div
         class="ui inverted vertical center aligned segment"
         style={{ minHeight: "700px", padding: "1em 0em",background:' url(https://images3.alphacoders.com/733/thumb-1920-733114.png) no-repeat center center ' }}

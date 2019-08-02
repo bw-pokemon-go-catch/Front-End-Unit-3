@@ -30,7 +30,7 @@ const[state,setState]= useState(false)
 
 const  Toggle =() => setState(!state)
 
-console.log(Name)
+
   return (
     <animated.div
       onMouseMove={({ clientX: x, clientY: y }) => set({ xys: calc(x, y) })}
@@ -75,3 +75,4 @@ console.log(Name)
 };
 
 export default Pokemon;
+

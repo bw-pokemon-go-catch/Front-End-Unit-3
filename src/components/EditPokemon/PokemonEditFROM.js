@@ -19,7 +19,7 @@ class PokemonEditFROM extends Component {
     const editPokemon = this.props.pokemon.filter(poke => {
       return poke.id === this.props.match.params.id;
     });
-
+console.log(editPokemon,'pokemonn')
     this.setState({
       id: this.props.match.params.id,
       Name: editPokemon.name,
@@ -45,6 +45,7 @@ class PokemonEditFROM extends Component {
   ];
 
   render() {
+    console.log(this.props.pokemon,'helloe')
     return (
       <form
         onSubmit={this.onSubmitHandle}

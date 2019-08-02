@@ -32,6 +32,11 @@ class Register extends React.Component {
         return(
             <div>
                 <Form onSubmit={this.register}>
+
+        <h1 style={{fontFamily:'Saira Stencil One, cursive' ,color:'white',padding:'5px 10px'}}>Login</h1>
+
+
+
                     <FormGroup >
                         <Label for='username'>Username: </Label>
                         <Col sm="12" md={{ size: 6, offset: 3 }}>
@@ -73,6 +78,20 @@ class Register extends React.Component {
 
                 <Button color='warning'>Submit
                     </Button>
+                <div>
+          <img style={{width:'30%'}}
+            src="https://www.stickpng.com/assets/thumbs/5859662e4f6ae202fedf2878.png"
+            alt="pokemon"
+          />
+          <img style={{width:'30%'}}
+            src="https://www.stickpng.com/assets/thumbs/585960224f6ae202fedf2853.png"
+            alt="pokemon"
+          />
+          <img style={{width:'30%'}}
+            src="https://www.stickpng.com/assets/thumbs/585960dd4f6ae202fedf2857.png"
+            alt="pokemon"
+          />
+        </div>
                 </Form>
 
             </div>
