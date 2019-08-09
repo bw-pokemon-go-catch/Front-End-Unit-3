@@ -4,6 +4,8 @@ import { Button, Col, Form, FormGroup, Label, Input } from "reactstrap";
 import { Loader } from 'semantic-ui-react'
 import { login } from "../actions";
 import ReactPlayer from 'react-player'
+
+import Fade from 'react-reveal/Fade';
 import { SimpleImg } from 'react-simple-img';
 class Login extends React.Component {
   state = {
@@ -37,7 +39,7 @@ class Login extends React.Component {
 
   render() {
     console.log()
-    return this.props.loggingIn ?<SimpleImg  height={300} src="https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c31f.png" /> :(
+    return this.props.loggingIn ?<Fade duration={1000} ><SimpleImg  height={500} src="https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c31f.png" /></Fade> :(
       <div>
         <ReactPlayer volume='.1' loop='false'  width="0" height='0'  style={{zIndex:"-1" ,display:'absulote'}} url='https://www.youtube.com/watch?v=gF1FJRM8Wck' playing />
         <Form onSubmit={this.login}>
