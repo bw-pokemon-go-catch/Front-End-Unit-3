@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, Col, Form, FormGroup, Label, Input } from 'reactstrap';
-
+import { SimpleImg } from 'react-simple-img';
 import { register } from '../actions';
 
+import Fade from 'react-reveal/Fade';
 class Register extends React.Component {
     state = {
         
@@ -29,7 +30,10 @@ class Register extends React.Component {
     }
     
     render() {
-        return(
+
+
+   return     this.props.registering ? <Fade duration={1000} ><SimpleImg  height={500} src="https://www.stickpng.com/assets/thumbs/580b57fcd9996e24bc43c31f.png" /></Fade>:
+        (
             <div>
                 <Form onSubmit={this.register}>
 
